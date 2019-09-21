@@ -1,0 +1,13 @@
+version: "3"
+services:
+  smartmontools:
+    build:
+      context: .
+      args:
+        version: 7.0
+    image: smartmontools:7.0
+    cap_add:
+      - SYS_RAWIO
+    devices:
+      - ${DEVICE}
+    command: ["smartctl", "-a", "-d", "${TYPE}", "${DEVICE}"]
