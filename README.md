@@ -13,7 +13,6 @@ DEVICE=/dev/sdb TYPE=sntjmicron docker-compose up
 ```
 docker build --build-arg version=7.0 -t smartmontools .
 docker run -it --device /dev/sdb --cap-add=SYS_RAWIO smartmontools smartctl -a -d sntjmicron /dev/sdb
-
 ```
 
 ### Sample output
